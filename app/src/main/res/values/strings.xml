@@ -10,4 +10,11 @@
       the License.
       -->
     <string name="app_name">AndroidDevChallenge</string>
+
+    <string name="age">%1$d years old</string>
+    <string name="temperament">Temperament: %1$s</string>
+    <string name="adoption_instructions_first_part">If you want to adopt %1$s, write us an email to\u0020</string>
+    <string name="adoption_instructions_email">adopt@puppies.org</string>
+    <string name="adoption_instructions_second_part">\u0020attaching a phone contact and we will call you.</string>
+    <string name="button_adopt">Adopt</string>
 </resources>

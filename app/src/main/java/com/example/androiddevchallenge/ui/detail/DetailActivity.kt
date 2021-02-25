@@ -5,6 +5,7 @@ import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
+import com.example.androiddevchallenge.model.Puppy
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
 class DetailActivity : AppCompatActivity() {
@@ -17,7 +18,9 @@ class DetailActivity : AppCompatActivity() {
         setContent {
             MyTheme {
                 Surface(color = MaterialTheme.colors.background) {
-
+                    intent.getParcelableExtra<Puppy>(EXTRA_PUPPY)?.let {
+                        DetailScreen(it) {}
+                    }
                 }
             }
         }

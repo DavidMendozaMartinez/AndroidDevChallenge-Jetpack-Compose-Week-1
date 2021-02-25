@@ -38,7 +38,7 @@ class PuppyRepository {
             "Female",
             7,
             "06/2013",
-            "Mongrel",
+            "Pit Bull Terrier",
             "Naughty",
             R.drawable.puppy_4
         ),
@@ -47,7 +47,7 @@ class PuppyRepository {
             "Male",
             3,
             "03/2017",
-            "Pit Bull Terrier",
+            "Mongrel",
             "Naughty",
             R.drawable.puppy_5
         ),
