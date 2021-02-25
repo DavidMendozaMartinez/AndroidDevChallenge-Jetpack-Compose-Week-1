@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!--
       Copyright 2020 The Android Open Source Project
       Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except
@@ -17,4 +17,6 @@
     <string name="adoption_instructions_email">adopt@puppies.org</string>
     <string name="adoption_instructions_second_part">\u0020attaching a phone contact and we will call you.</string>
     <string name="button_adopt">Adopt</string>
+    <string name="new_adoption_application">%1$s - Adoption application</string>
+    <string name="adoption_application">Adoption application for: %1$s\nName:\nLocation:\nPhone number:</string>
 </resources>
