@@ -15,6 +15,7 @@
  */
 package com.example.androiddevchallenge.ui.puppies
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
@@ -24,6 +25,7 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.androiddevchallenge.data.PuppyRepository
+import com.example.androiddevchallenge.ui.detail.DetailActivity
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
 class PuppiesActivity : AppCompatActivity() {
@@ -44,7 +46,11 @@ class PuppiesActivity : AppCompatActivity() {
         }
 
         viewModel.navigateToDetails.observe(this) {
-            it.getContentIfNotHandled()?.let { }
+            it.getContentIfNotHandled()?.let { puppy ->
+                val intent = Intent(this, DetailActivity::class.java)
+                intent.putExtra(DetailActivity.EXTRA_PUPPY, puppy)
+                startActivity(intent)
+            }
         }
     }
 }
