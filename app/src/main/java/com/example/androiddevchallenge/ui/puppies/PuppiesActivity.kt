@@ -17,30 +17,45 @@ package com.example.androiddevchallenge.ui.puppies
 
 import android.os.Bundle
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.androiddevchallenge.data.PuppyRepository
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
 class PuppiesActivity : AppCompatActivity() {
+
+    private val viewModel by viewModels<PuppiesViewModel>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
             MyTheme {
-                MyApp()
+                Surface(color = MaterialTheme.colors.background) {
+                    PuppiesScreen(
+                        items = viewModel.puppies,
+                        onItemClicked = viewModel::onItemClicked
+                    )
+                }
             }
+        }
+
+        viewModel.navigateToDetails.observe(this) {
+            it.getContentIfNotHandled()?.let { }
         }
     }
 }
 
-// Start building your app here!
 @Composable
 fun MyApp() {
     Surface(color = MaterialTheme.colors.background) {
-        Text(text = "Ready... Set... GO!")
+        PuppiesScreen(
+            items = PuppyRepository().getPuppies(),
+            onItemClicked = {}
+        )
     }
 }
 
